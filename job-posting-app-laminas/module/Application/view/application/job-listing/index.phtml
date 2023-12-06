@@ -1,0 +1,21 @@
+
+
+<!-- module/Application/view/application/job-listing/index.phtml -->
+
+<h2>Job Listings</h2>
+
+<?php if (count($jobs) > 0) : ?>
+    <ul>
+        <?php foreach ($jobs as $job) : ?>
+            <li>
+                <strong><?= $this->escapeHtml($job->getTitle()) ?></strong><br>
+                <?= $this->escapeHtml($job->getDescription()) ?><br>
+                Company: <?= $this->escapeHtml($job->getCompany()) ?><br>
+                Location: <?= $this->escapeHtml($job->getLocation()) ?><br>
+                Posted on: <?= $this->escapeHtml($job->getDatePosted()->format('Y-m-d H:i:s')) ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else : ?>
+    <p>No jobs available.</p>
+<?php endif; ?>

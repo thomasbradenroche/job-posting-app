@@ -1,0 +1,32 @@
+<!-- module/Application/view/application/job-posting/index.phtml -->
+
+<h2>Post a Job</h2>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('job_posting'));
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+<div>
+    <?= $this->formRow($form->get('title')) ?>
+</div>
+
+<div>
+    <?= $this->formRow($form->get('description')) ?>
+</div>
+
+<div>
+    <?= $this->formRow($form->get('company')) ?>
+</div>
+
+<div>
+    <?= $this->formRow($form->get('location')) ?>
+</div>
+
+<div>
+    <?= $this->formRow($form->get('submit')) ?>
+</div>
+
+<?= $this->form()->closeTag($form); ?>
